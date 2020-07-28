@@ -1,13 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const EJS = require("ejs");
+const lodash = require("lodash");
 
-
-const homeContent = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis minima voluptatum quam amet debitis deleniti hic culpa, optio rerum officia voluptatibus magni veniam natus. Excepturi fuga voluptatum sunt consequatur itaque? Dolores temporibus dolorum fugiat deleniti consequuntur at alias nemo eum porro facilis minima placeat natus, magnam fugit omnis rem sapiente, amet ipsum quisquam! Molestias cum velit, nam eos aut nisi voluptates possimus ratione, optio totam, corporis accusamus. Quod debitis cupiditate doloremque voluptate eaque ad eligendi quas ut ea corporis minima, ipsum sed esse, ipsa rerum adipisci nisi numquam iste molestiae illo in id reiciendis fugit blanditiis. Veniam dicta officia, et, possimus repellendus recusandae quo optio, iure rem laboriosam assumenda eos consequuntur totam! Cupiditate neque nulla voluptates eum obcaecati, ducimus autem? Iure doloremque voluptatem quis sit. Placeat quam facilis odio eaque illo perspiciatis deleniti, totam nisi iusto doloremque cum reiciendis dicta repellat praesentium ab dolor excepturi voluptate exercitationem modi veritatis laudantium? Nobis sed veniam possimus autem obcaecati unde! Eveniet dolor nulla molestiae nisi corporis. Quasi, perferendis mollitia nostrum illo architecto corporis eveniet. "
 
 const aboutContent = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis minima voluptatum quam amet debitis deleniti hic culpa, optio rerum officia voluptatibus magni veniam natus. Excepturi fuga voluptatum sunt consequatur itaque? Dolores temporibus dolorum fugiat deleniti consequuntur at alias nemo eum porro facilis minima placeat natus, magnam fugit omnis rem sapiente, amet ipsum quisquam! Molestias cum velit, nam eos aut nisi voluptates possimus ratione, optio totam, corporis accusamus. Quod debitis cupiditate doloremque voluptate eaque ad eligendi quas ut ea corporis minima, ipsum sed esse, ipsa rerum adipisci nisi numquam iste molestiae illo in id reiciendis fugit blanditiis.";
 
-const Posts = [{BlogTitle: "Home",BlogBody: homeContent}];
+const Posts = [];
 
 // console.log(express)
 const app = express();
@@ -17,8 +16,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/",(req,res) => {
-    // res.send("Hello world")
-    // console.log(Posts)
     res.render("home",{homeContent: Posts})
 })
 
@@ -32,6 +29,14 @@ app.get("/contact",(req,res) => {
 
 app.get("/compose",(req,res) => {
     res.render("composs");
+})
+
+app.get("/:data",(req,res) => {
+    Posts.forEach(post => {
+        if(lodash.lowerCase(post.BlogTitle) === lodash.lowerCase(req.params.data)) {
+            res.render("RenderPost",{TargetPost: post})
+        }
+    })
 })
 
 app.post("/",(req,res) => {
