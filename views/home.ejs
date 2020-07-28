@@ -1,0 +1,10 @@
+<%- include("partials/header") -%>
+<div class="wrapper">
+    <% for(var i = 0; i < homeContent.length; i++) { %>
+        <div class="container">
+            <h1><%= homeContent[i].BlogTitle %></h1>
+            <p><%= homeContent[i].BlogBody %></p>
+        </div>
+    <% } %>
+</div>
+<%- include("partials/footer") -%>
