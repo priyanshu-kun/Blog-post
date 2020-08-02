@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+<div class="wrapper">
+    <div class="composecont">
+        <form action="/edit" method="post">
+            <h1 class="composeH1">Edit blog post.</h1>
+            <div class="inputs">
+                <input type="text" name="blogtitle" value="<%=editblog.title%>" id="blogtitle" placeholder="Enter your Blog title.">
+                <input type="text" name="blogbatch" value="<%=editblog.badge%>" id="blogtitle" placeholder="Blog batches (seprated by commas).">
+                <textarea name="blogbody"  id="blogbody" cols="30" rows="10"
+                    placeholder="Enter your blog body."></textarea>
+                <button id="btn" type="submit">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include("partials/footer") -%>

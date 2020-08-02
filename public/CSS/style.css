@@ -1,3 +1,5 @@
+@import "header.css";
+
 @font-face  {
     font-family: "HelveticaNowDisplay-Light.ttf";
     src: url(/font/HelveticaNowDisplay-Light.ttf);
@@ -18,7 +20,8 @@
     width: 100%;
     align-items: center;
     padding: 0 30px;
-    background: rgb(176, 173, 216);
+    background: #2A2E35;
+    z-index: 9999;
 }
 
 .list {
@@ -35,7 +38,7 @@
 
 .list li a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255,0.7);
     font-size: 0.8rem;
     transition: all 0.2s ease;
     text-transform: uppercase;
@@ -43,40 +46,44 @@
 }
 
 .list li a:hover {
-    opacity: 0.7;
+    color: rgb(7, 212, 0);
+    /* opacity: 0.7; */
+
 }
 
 .navlogo {
     text-decoration: none;
     font-size: 1.5rem;
-    color: white;
+    color: rgb(255, 255, 255);
     letter-spacing: 3px;
     opacity: 0.7;
 }
 
 .wrapper {
     min-height: 150vh;
-   padding: 20vh 0;
-   background: rgb(235, 235, 240);
+   padding: 10vh 0;
+   background: rgb(18,24,27);
    display: flex;
    flex-direction: column;
    /* justify-content: space-around; */
    align-items: center;
+   /* border: 3px solid green; */
 }
 
 .container {
-    width: 60%;
+    width: 90%;
     text-align: left;
-    margin:20px;
+    margin: 20vh 20px 20px 20px;
     /* border: 1px solid red; */
     padding: 40px;
-    background:rgba(182, 177, 209, 0.3);
+    background: linear-gradient(rgb(152,248,61),rgb(102,247,139));
+    background: rgb(42, 46, 53,0.6);
     border-radius: 10px;
 }
 
 .container h1 {
     margin: 20px 0;
-    color: rgb(65, 65, 65);
+    color: rgb(255, 255, 255,0.7);
     /* text-transform: uppercase; */
     letter-spacing: 3px;
 }
@@ -85,10 +92,54 @@
     word-spacing: 5px;
     letter-spacing: 1px;
     text-align: justify;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255,0.7);
     line-height: 1.8rem;
     /* font-weight: bold; */
     
+}
+
+
+.posts {
+    width: 70%;
+    text-align: left;
+    margin: 50px 0 0px 0;
+    /* border: 1px solid red; */
+    padding: 40px;
+    /* background: linear-gradient(rgb(152,248,61),rgb(102,247,139)); */
+    background: rgb(42, 46, 53,0.6);
+    border-radius: 10px;
+}
+
+.posts h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+
+
+.posts p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    /* line-height: 2rem; */
+    color: rgb(255, 255, 255,0.8);
+}
+
+.badges {
+    color: rgba(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    /* margin-bottom: 30px; */
+    background: linear-gradient(rgb(152,248,61),rgb(102,247,139));
+    padding: 3px 5px;
+    border-radius: 5px;
+    
+}
+
+.snippts-heading {
+    margin-bottom: 20px;
 }
 
 .inputs {
@@ -100,8 +151,9 @@
 #blogtitle, #blogbody, #btn {
     margin: 10px;
     font-size: 1.1rem;
+
     padding: 8px 20px;
-    border: 1px solid rgb(60, 60, 85,0.3);
+    border: 1px solid rgba(153, 153, 177, 0.8);
     /* border: none; */
     border-radius: 5px;
     outline: none;
@@ -114,20 +166,22 @@
 }
 
 #btn {
-    background:  rgb(153, 0, 255);
+    background: linear-gradient(rgb(56, 255, 106,0.8),rgb(152,248,61,0.8));
     color: white;
     border: none;
     cursor: pointer;
     padding: 13px 0;
     transition: all 0.2s ease;
+    font-weight: bold;
 }
+
 
 #btn:hover {
     opacity: 0.8;
 }
 
 #btn:active {
-   box-shadow: 0 0 0 5px rgb(153, 0, 255,0.2);
+   box-shadow: 0 0 0 5px rgba(0, 146, 7, 0.2);
 }
 
 
@@ -135,18 +189,24 @@
     position: relative;
     left: 10px;
     opacity: 0.7;
+    color: white;
 }
 
 .composecont {
-    background: rgba(182, 177, 209, 0.3);
-    border-radius: 5px;
-    box-shadow: 2px 3px 3px 0px rgba(182, 177, 209, 0.6),4px 5px 7px 0px rgba(182, 177, 209, 0.5);
+    background: rgb(42, 46, 53,0.6);
+    border-radius: 10px;
+    width: 60%;
+    text-align: left;
+    margin: 10vh 20px 20px 20px;
+    /* border: 1px solid red; */
+    padding: 40px;
+    border-radius: 10px;
 }
 
 
 .readMore {
     text-decoration: none;
-    color: rgb(162, 0, 255);
+    color: rgb(0, 255, 76);
     transition: all 0.3s linear;
 }
 
@@ -154,14 +214,119 @@
     text-decoration: underline;
 }
 
+.mail-subscription {
+    /* border: 1px solid red; */
+    width: 70%;
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(42, 46, 53,0.3);
+    border-radius: 10px;
+}
+
+.fa-envelope{
+  font-size: 20rem !important;
+  color: rgb(83, 90, 104) !important;
+  /* box-shadow: 3px 5px 8px rgba(255, 255, 255, 0.3); */
+}
+
+.mail-area {
+    position: relative;
+}
+
+.mail-area input {
+    width: 30rem;
+   padding: 20px;
+   font-size: 1.4rem;
+   border-radius: 20px;
+   background: rgb(42, 46, 53);
+   border: none;
+   outline: none;
+   color: white;
+}
+
+.mail-area button {
+    width: 6rem;
+   padding: 15px;
+   font-size: 2rem;
+   border-radius: 20px;
+    position: absolute;
+    right: 0;
+    border: none;
+    background: linear-gradient(rgb(152,248,61,0.8),rgb(56, 255, 106,0.8));
+    color: rgba(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+}
+
+.mail-area:active button {
+    background: linear-gradient(rgb(56, 255, 106),rgb(152,248,61));
+}
+
+.delete-btn {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 10rem;
+    border-radius: 10px;
+    background: linear-gradient(rgb(56, 255, 106,0.8),rgb(152,248,61,0.8));
+    border: none;
+    color: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.delete-btn:active {
+    background: linear-gradient(rgb(152,248,61),rgb(56, 255, 106));
+}
+
+.edit-btn {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 10rem;
+    border-radius: 10px;
+    background: linear-gradient(rgb(56, 255, 106,0.8),rgb(152,248,61,0.8));
+    border: none;
+    color: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn:active {
+    background: linear-gradient(rgb(152,248,61),rgb(56, 255, 106));
+}
+
+.compose-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
     width: 100%;
-    background: rgb(176, 173, 216);
-    color: white;
+    background: #2A2E35;
+    color: rgb(255, 255, 255,0.6);
     /* margin-top: 20px; */
 
 }
+
+/* style="font-size: 2.2rem;" */
+
+/* 
+    remaning work in blog:
+    Add comment section.
+    Add social media icons.
+    Add costonize text box in compose file.
+    Add email save function.
+    Add new styling in content blog page.
+    Make responsive.
+ */

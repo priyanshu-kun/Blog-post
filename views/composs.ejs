@@ -1,15 +1,29 @@
 <%- include("partials/header") -%>
 <div class="wrapper">
-    <div class="container composecont">
+    <div class="composecont">
         <form action="/" method="post">
             <h1 class="composeH1">Add new blog post.</h1>
             <div class="inputs">
                 <input type="text" name="blogtitle" id="blogtitle" placeholder="Enter your Blog title.">
+                <input type="text" name="blogbatch" id="blogtitle" placeholder="Blog batches (seprated by commas).">
                 <textarea name="blogbody" id="blogbody" cols="30" rows="10"
                     placeholder="Enter your blog body."></textarea>
                 <button id="btn" type="submit">Publish</button>
             </div>
         </form>
     </div>
+    <% homeContent.forEach(item => { %>
+    <div class="posts compose-heading">
+        <div class="snippts-heading">
+            <h1><%= item.title %></h1>
+        </div>
+        <div>
+            <form action="/delete?_method=DELETE" method="post">
+                <button class="delete-btn" name="deleteBtn" value="<%=item._id%>" type="submit">Delete</button>
+                <a class="edit-btn" name="editBtn" href="/<%=item%>" type="submit">Edit</a>
+            </form>
+        </div>
+    </div>
+    <% })%>
 </div>
 <%- include("partials/footer") -%>

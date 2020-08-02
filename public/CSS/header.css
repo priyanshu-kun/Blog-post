@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "HelveticaNowDisplay-Thin";
+    src: url(/font/HelveticaNowDisplay-Thin.ttf);
+}
+
+.home-page-img {
+    width: 70%;
+    height: 80vh;
+    /* opacity: 0.6; */
+    position: relative;
+    margin-top: 6vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    background: rgb(42, 46, 53,0.7);
+}
+
+.home-page-img h1 {
+   font-size: 2.5rem;
+   font-family: "HelveticaNowDisplay-Thin";
+   color: rgb(255, 255, 255,0.7);
+   position: absolute;
+   bottom: 30px;
+   z-index: 3;
+   text-transform: uppercase;
+}
+
+
+
+
+.home-page-img img {
+    width: 98%;
+    height: 80%;
+    position: absolute;
+    top: 13px;
+    border-radius: 10px;
+    /* left: 0; */
+    /* right: 0; */
+}
+
+/*
+ <!-- <% var batch = TargetPost.badge.split(",") %>
+            <% batch.forEach(bt => { %>
+                <small><%=bt%></small>
+        <% }) %> -->
+*/
